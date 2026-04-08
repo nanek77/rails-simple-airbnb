@@ -1,0 +1,29 @@
+<div class="main mx-4">
+  <div class="footer d-flex justify-content-between bg-body-tertiary">
+    <div>
+      <h2>Simple Airbnb</h2>
+    </div>
+    <div>
+      <%= link_to "Add Flat" %>
+    </div>
+  </div>
+<div class="container p-2">
+  <h1>All our flats (<%= @flats.count %>)</h1>
+  <div class="row">
+    <div class="col-12 d-flex">
+      <% @flats.each do |flat| %>
+      <div class="card">
+        <div class="card-title bg-body-tertiary p-2">
+          <h3><%= flat.name %></h3>
+          <p><%= flat.address %></p>
+          <p><i class="fa-solid fa-user-group"></i> <%= flat.number_of_guests %>       <i class="fa-solid fa-euro-sign"></i> <%= flat.price_per_night %></p>
+        </div>
+        <div>
+          <%= link_to "More info", flat %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
